@@ -36,7 +36,7 @@ Perfect for:
 ### Option 2: Docker Compose
 
 ```bash
-git clone https://github.com/yourusername/repoboard.git
+git clone https://github.com/yksanjo/repoboard.git
 cd repoboard
 docker-compose up -d
 ```
