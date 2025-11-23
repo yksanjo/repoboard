@@ -1,5 +1,9 @@
 # 🔍 RepoBoard - GitHub Curation AI Agent
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![GitHub stars](https://img.shields.io/github/stars/yksanjo/repoboard?style=social)](https://github.com/yksanjo/repoboard/stargazers) [![GitHub forks](https://img.shields.io/github/forks/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/issues) [![Last commit](https://img.shields.io/github/last-commit/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/commits/main)
+
+
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
 [![Deploy on Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
 
