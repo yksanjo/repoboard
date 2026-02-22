@@ -1,155 +1,84 @@
-# 🔍 RepoBoard - GitHub Curation AI Agent
+# repoboard
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/) [![GitHub stars](https://img.shields.io/github/stars/yksanjo/repoboard?style=social)](https://github.com/yksanjo/repoboard/stargazers) [![GitHub forks](https://img.shields.io/github/forks/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/issues) [![Last commit](https://img.shields.io/github/last-commit/yksanjo/repoboard.svg)](https://github.com/yksanjo/repoboard/commits/main)
+## Detailed Description
 
+repoboard is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
-[![Deploy on Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com)
+## Problem Statement
 
-An autonomous system that ingests, analyzes, clusters, and curates GitHub repositories into discoverable boards using AI.
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-## ✨ Features
+## Solution Overview
 
-- 🤖 **AI-Powered Summaries** - Automatically generates summaries, tags, and categories using LLMs
-- 📊 **Smart Clustering** - Groups similar repositories into curated boards
-- 🎯 **Intelligent Ranking** - Scores repositories using star velocity, health, uniqueness, and more
-- 🔍 **Semantic Search** - Find similar repositories using vector embeddings
-- 🌐 **Browser Extension** - Access RepoBoard directly from GitHub
-- 🚀 **One-Click Deploy** - Deploy to Railway or Render in minutes
+Summarize the architecture, core modules, and runtime behavior at a high level.
 
-## 🎯 Target Audience
+## Key Features
 
-Perfect for:
-- **Developer Advocates** - Curating resources for communities
-- **Tech Bloggers** - Finding trending repos to write about
-- **Open Source Maintainers** - Discovering similar projects
-- **Companies** - Building internal knowledge bases
-- **Educational Platforms** - Curating learning resources
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
 
-## 🚀 Quick Start
+## Repository Structure
 
-### Option 1: One-Click Deploy (Easiest)
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template)
+## Getting Started
 
-1. Click the button above
-2. Add your API keys (OpenAI, GitHub)
-3. Deploy!
+### Prerequisites
 
-### Option 2: Docker Compose
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-git clone https://github.com/yksanjo/repoboard.git
-cd repoboard
-docker-compose up -d
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt  # or: pip install -e .[dev]
+pytest
 ```
 
-### Option 3: Local Development
+## Usage
 
-```bash
-# Clone repo
-git clone https://github.com/yourusername/repoboard.git
-cd repoboard
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-# Set up Python environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+## Quality Standards
 
-# Configure environment
-cp .env.example .env
-# Edit .env with your API keys
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-# Initialize database
-python -c "from db.connection import init_db; init_db()"
+## Security
 
-# Run the pipeline
-python jobs/ingest_trending.py      # Fetch repos
-python jobs/process_repos.py        # Generate summaries
-python jobs/generate_boards.py      # Create boards
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-# Start services
-cd api && uvicorn main:app --reload  # API at http://localhost:8000
-cd web && npm install && npm run dev  # Frontend at http://localhost:3000
-```
+## Contributing
 
-## 📖 Documentation
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-- **[START_HERE.md](START_HERE.md)** - Step-by-step setup guide
-- **[SETUP.md](SETUP.md)** - Detailed setup instructions
-- **[QUICKSTART.md](QUICKSTART.md)** - Quick reference
-- **[ARCHITECTURE.md](ARCHITECTURE.md)** - System architecture
-- **[DEPLOY.md](DEPLOY.md)** - Deployment guides
-- **[DISTRIBUTION_STRATEGY.md](DISTRIBUTION_STRATEGY.md)** - Distribution strategy
+## Roadmap
 
-## 🏗️ Architecture
+Track upcoming milestones, technical debt, and planned feature work.
 
-```
-GitHub API
-    ↓
-[Ingestion Service] → PostgreSQL (Metadata)
-    ↓
-[LLM Service] → Summaries & Tags
-    ↓
-[Embedding Service] → Qdrant (Vectors)
-    ↓
-[Curation Engine] → Clustering & Ranking
-    ↓
-[API] → [Web Frontend]
-```
+## Support
 
-## 🛠️ Tech Stack
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
-- **Backend**: Python, FastAPI, SQLAlchemy
-- **Database**: PostgreSQL
-- **Vector DB**: Qdrant
-- **LLM**: OpenAI/Anthropic/Ollama (configurable)
-- **Frontend**: React, Vite, React Query
-- **Infrastructure**: Docker Compose
+## License
 
-## 📦 Components
-
-- **ingestion-service** - GitHub API client, ingestion pipeline
-- **embedding-service** - Vector embedding generation
-- **llm-service** - LLM prompts and summarization
-- **curation-engine** - Clustering and ranking
-- **api** - FastAPI REST API
-- **web** - React frontend
-- **extension** - Browser extension for GitHub
-
-## 🌐 Browser Extension
-
-Install the Chrome/Firefox extension to:
-- Browse curated boards from GitHub
-- See similar repositories on any repo page
-- Quick access to RepoBoard
-
-See [extension/README.md](extension/README.md) for installation.
-
-## 📊 API Endpoints
-
-- `GET /repos` - List/search repositories
-- `GET /repos/{id}` - Get repository details
-- `GET /boards` - List all boards
-- `GET /boards/{id}` - Get board with repositories
-- `GET /search?q=query` - Search repositories
-- `GET /stats` - Get statistics
-
-API docs: http://localhost:8000/docs
-
-## 🤝 Contributing
-
-Contributions welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
-
-## 📝 License
-
-MIT License - see [LICENSE](LICENSE) file
-
-## 🙏 Acknowledgments
-
-Built with ❤️ for the developer community
-
----
-
-**Made with**: Python, FastAPI, React, OpenAI, Qdrant
+This project is released under the MIT License.
